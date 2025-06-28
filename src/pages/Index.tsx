@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { BarChart3, Shield, Clock, Users, Star, ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import  logo  from "../assets/logo.png";
 
 export default function Index() {
   const scrollToTop = () => {
@@ -15,7 +16,8 @@ export default function Index() {
         <nav className="content-container">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <h2 className="font-display text-2xl font-bold text-primary">IAssist</h2>
+             {/* on remplace le titre par le logo, on ajuste la hauteur via Tailwind */}
+              <img src={logo} alt="IAssist Logo" className="h-16 w-auto" />
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
