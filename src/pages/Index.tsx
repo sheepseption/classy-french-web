@@ -64,6 +64,9 @@ export default function Index() {
                 <Button size="lg" variant="secondary" asChild className="hover-lift">
                   <a href="#services">Découvrir nos Services</a>
                 </Button>
+                <Button size="lg" asChild className="hover-lift">
+                  <Link to="/rendez-vous">Prendre Rendez-vous</Link>
+                </Button>
               </div>
             </div>
           </div>
