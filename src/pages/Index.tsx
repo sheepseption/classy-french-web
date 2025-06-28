@@ -1,300 +1,278 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { BarChart3, Shield, Clock, Users, ArrowRight, Quote, Phone, Mail, MapPin } from "lucide-react";
+import { BarChart3, Shield, Clock, Users, Star, ArrowRight, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const Index = () => {
-  const services = [
-    {
-      icon: BarChart3,
-      title: "Conseil Stratégique",
-      description: "Analyse approfondie et recommandations personnalisées pour optimiser votre performance immobilière."
-    },
-    {
-      icon: Shield,
-      title: "Sécurité & Conformité",
-      description: "Protection de vos données et mise en conformité avec les réglementations immobilières en vigueur."
-    },
-    {
-      icon: Clock,
-      title: "Gestion Automatisée",
-      description: "Suivi rigoureux et traitement automatique de tous vos dossiers et rendez-vous clients."
-    },
-    {
-      icon: Users,
-      title: "Support Dédié",
-      description: "Une intelligence artificielle disponible 24h/24 pour répondre à toutes vos questions."
-    }
-  ];
-
-  const processSteps = [
-    {
-      number: "01",
-      title: "Consultation Initiale",
-      description: "Nous analysons vos besoins spécifiques en immobilier et définissons ensemble vos objectifs."
-    },
-    {
-      number: "02",
-      title: "Configuration IA",
-      description: "Paramétrage de votre assistant virtuel selon vos processus et votre clientèle."
-    },
-    {
-      number: "03",
-      title: "Intégration",
-      description: "Mise en place fluide avec vos outils existants et formation de votre équipe."
-    },
-    {
-      number: "04",
-      title: "Optimisation",
-      description: "Suivi continu des performances et ajustements pour maximiser votre efficacité."
-    }
-  ];
-
-  const testimonials = [
-    {
-      text: "Cette IA a révolutionné notre façon de travailler. Nos clients sont plus satisfaits et notre équipe plus efficace.",
-      author: "Marie Dubois",
-      role: "Directrice d'Agence, Immobilier Prestige"
-    },
-    {
-      text: "Un gain de temps considérable sur la gestion administrative. L'IA comprend parfaitement le secteur immobilier.",
-      author: "Jean Martin",
-      role: "Agent Commercial, Century 21"
-    },
-    {
-      text: "Interface intuitive et résultats impressionnants. Nos ventes ont augmenté de 30% depuis l'implémentation.",
-      author: "Sophie Bernard",
-      role: "Responsable Équipe, Orpi"
-    }
-  ];
-
+export default function Index() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-[#547db4] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">IA</span>
-              </div>
-              <span className="text-xl font-semibold text-foreground">IAssist</span>
+      {/* Navigation Header */}
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-border">
+        <nav className="content-container">
+          <div className="flex justify-between items-center py-4">
+            <div className="flex items-center">
+              <h2 className="font-display text-2xl font-bold text-primary">IAssist</h2>
             </div>
+            
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#services" className="text-muted-foreground hover:text-[#547db4] transition-colors font-medium">Services</a>
-              <a href="#process" className="text-muted-foreground hover:text-[#547db4] transition-colors font-medium">Processus</a>
-              <a href="#testimonials" className="text-muted-foreground hover:text-[#547db4] transition-colors font-medium">Témoignages</a>
-              <Button className="bg-[#547db4] hover:bg-[#3d5a82] text-white">
-                Prendre Rendez-vous
-              </Button>
+              <Link to="/" className="text-foreground hover:text-primary transition-colors font-medium">
+                Accueil
+              </Link>
+              <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">
+                Services
+              </a>
+              <a href="#process" className="text-foreground hover:text-primary transition-colors font-medium">
+                Processus
+              </a>
+              <Link to="/rendez-vous" className="text-foreground hover:text-primary transition-colors font-medium">
+                Rendez-vous
+              </Link>
+              <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-medium">
+                Contact
+              </Link>
+            </div>
+
+            {/* Mobile menu button */}
+            <button className="md:hidden p-2">
+              <div className="w-6 h-6 flex flex-col justify-center items-center">
+                <span className="w-4 h-0.5 bg-foreground mb-1"></span>
+                <span className="w-4 h-0.5 bg-foreground mb-1"></span>
+                <span className="w-4 h-0.5 bg-foreground"></span>
+              </div>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        {/* Hero Section */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-primary elegant-gradient py-24 md:py-32">
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="relative content-container text-center text-white">
+            <div className="animate-fade-in">
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
+                Une Intelligence Artificielle à Votre Service
+              </h1>
+              <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
+                Nous offrons des solutions sur mesure pour répondre à tous vos besoins professionnels avec efficacité et intégrité.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button size="lg" variant="secondary" asChild className="hover-lift">
+                  <a href="#services">Découvrir nos Services</a>
+                </Button>
+                <Button size="lg" asChild className="hover-lift">
+                  <Link to="/rendez-vous">Prendre Rendez-vous</Link>
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </section>
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#547db4] via-[#3d5a82] to-[#547db4] text-white">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative container mx-auto px-4 py-24 md:py-32">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-white/20 text-white border-white/30 hover:bg-white/30">
-              Intelligence Artificielle pour l'Immobilier
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Votre Secrétaire IA
-              <span className="block text-white/90">Dédiée à l'Immobilier</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed max-w-3xl mx-auto">
-              Révolutionnez votre agence immobilière avec une intelligence artificielle qui comprend vos besoins, 
-              gère vos rendez-vous et optimise votre relation client.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-[#547db4] hover:bg-gray-100 font-semibold px-8 py-4 text-lg">
-                Découvrir nos Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#547db4] font-semibold px-8 py-4 text-lg">
-                Demander une Démo
-              </Button>
+        {/* Services Section */}
+        <section id="services" className="section-padding bg-gray-50">
+          <div className="content-container">
+            <div className="text-center mb-16 animate-fade-in">
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Nos Services</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Des solutions complètes adaptées à vos besoins spécifiques
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  icon: <BarChart3 className="w-8 h-8" />,
+                  title: "Conseil Stratégique",
+                  description: "Analyse approfondie et recommandations personnalisées pour optimiser votre performance."
+                },
+                {
+                  icon: <Shield className="w-8 h-8" />,
+                  title: "Sécurité & Conformité",
+                  description: "Protection de vos données et mise en conformité avec les réglementations en vigueur."
+                },
+                {
+                  icon: <Clock className="w-8 h-8" />,
+                  title: "Gestion de Projet",
+                  description: "Suivi rigoureux et livraison dans les délais de tous vos projets critiques."
+                },
+                {
+                  icon: <Users className="w-8 h-8" />,
+                  title: "Support Dédié",
+                  description: "Une équipe d'experts disponible pour répondre à toutes vos questions."
+                }
+              ].map((service, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border hover-lift transition-all duration-300 animate-slide-in-left" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="text-primary mb-4">{service.icon}</div>
+                  <h3 className="font-display text-xl font-semibold mb-3">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-              Nos Services Spécialisés
-            </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Des solutions d'intelligence artificielle conçues spécifiquement pour les professionnels de l'immobilier
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md hover:-translate-y-2">
-                <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-[#547db4]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#547db4] transition-colors duration-300">
-                    <service.icon className="h-8 w-8 text-[#547db4] group-hover:text-white transition-colors duration-300" />
+        {/* Process Section */}
+        <section id="process" className="section-padding">
+          <div className="content-container">
+            <div className="text-center mb-16 animate-fade-in">
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Notre Processus</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Une approche structurée pour garantir votre succès
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-4 gap-8">
+              {[
+                {
+                  number: "1",
+                  title: "Consultation Initiale",
+                  description: "Nous analysons vos besoins et définissons ensemble vos objectifs."
+                },
+                {
+                  number: "2",
+                  title: "Planification",
+                  description: "Élaboration d'une stratégie sur mesure avec des jalons clairs."
+                },
+                {
+                  number: "3",
+                  title: "Mise en Œuvre",
+                  description: "Exécution professionnelle avec suivi régulier de l'avancement."
+                },
+                {
+                  number: "4",
+                  title: "Résultats",
+                  description: "Livraison de solutions efficaces et mesure de la performance."
+                }
+              ].map((step, index) => (
+                <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${index * 150}ms` }}>
+                  <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 mx-auto">
+                    {step.number}
                   </div>
-                  <CardTitle className="text-xl mb-3">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-center text-base leading-relaxed">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section id="process" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-              Notre Processus d'Intégration
-            </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Une approche méthodique pour une intégration parfaite dans votre agence immobilière
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="relative">
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[#547db4] to-[#3d5a82] rounded-2xl flex items-center justify-center shadow-lg">
-                    <span className="text-2xl font-bold text-white">{step.number}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-foreground">{step.title}</h3>
+                  <h3 className="font-display text-xl font-semibold mb-3">{step.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{step.description}</p>
                 </div>
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 -right-4 w-8 h-0.5 bg-[#dee2e3]"></div>
-                )}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-              Ils Nous Font Confiance
-            </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Découvrez comment notre IA transforme le quotidien des professionnels de l'immobilier
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-md hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-8">
-                  <Quote className="h-8 w-8 text-[#547db4] mb-4 opacity-50" />
-                  <p className="text-lg mb-6 leading-relaxed italic text-muted-foreground">
-                    "{testimonial.text}"
-                  </p>
-                  <div>
-                    <p className="font-semibold text-foreground">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+        {/* Trust Section */}
+        <section className="section-padding bg-gray-50">
+          <div className="content-container">
+            <div className="text-center mb-16 animate-fade-in">
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Ils Nous Font Confiance</h2>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {[
+                {
+                  text: "Un service exceptionnel qui a dépassé toutes nos attentes. L'équipe est professionnelle, réactive et très compétente.",
+                  author: "Marie Dubois",
+                  role: "Directrice Générale, TechCorp"
+                },
+                {
+                  text: "Leur expertise nous a permis d'optimiser nos processus et d'augmenter notre efficacité de 40%.",
+                  author: "Jean Martin",
+                  role: "PDG, InnovateSolutions"
+                },
+                {
+                  text: "Un partenaire de confiance sur qui nous pouvons compter pour tous nos projets stratégiques.",
+                  author: "Sophie Bernard",
+                  role: "Responsable IT, GlobalFinance"
+                }
+              ].map((testimonial, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border hover-lift animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="flex text-yellow-400 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-current" />
+                    ))}
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+                  <p className="text-muted-foreground italic mb-4 leading-relaxed">"{testimonial.text}"</p>
+                  <div>
+                    <div className="font-semibold">{testimonial.author}</div>
+                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#547db4] to-[#3d5a82] text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Prêt à Transformer Votre Agence ?
-          </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Rejoignez les centaines d'agences immobilières qui ont déjà adopté notre solution d'IA
-          </p>
-          <Button size="lg" className="bg-white text-[#547db4] hover:bg-gray-100 font-semibold px-8 py-4 text-lg">
-            Planifier une Consultation Gratuite
-          </Button>
-        </div>
-      </section>
+            <div className="flex justify-center items-center gap-8 opacity-60">
+              {["Enterprise+", "TechLeader", "InnovateCo", "GlobalTrust"].map((company, index) => (
+                <div key={index} className="text-lg font-semibold text-muted-foreground">
+                  {company}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="section-padding bg-primary text-white">
+          <div className="content-container text-center">
+            <div className="animate-fade-in">
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+                Prêt à Transformer Votre Entreprise ?
+              </h2>
+              <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+                Contactez-nous dès aujourd'hui pour une consultation gratuite
+              </p>
+              <Button size="lg" variant="secondary" asChild className="hover-lift">
+                <Link to="/rendez-vous">
+                  Planifier une Consultation
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
 
       {/* Footer */}
       <footer className="bg-black text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="content-container">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-[#547db4] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">IA</span>
-                </div>
-                <span className="text-xl font-semibold">IAssist</span>
-              </div>
+              <h3 className="font-display text-xl font-semibold mb-4">IAssist</h3>
               <p className="text-gray-400 leading-relaxed">
-                L'intelligence artificielle au service de l'immobilier français depuis 2024.
+                Excellence et professionnalisme depuis 2010. Votre succès est notre priorité.
               </p>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4 text-white">Navigation</h4>
-              <ul className="space-y-2">
-                <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                <li><a href="#process" className="text-gray-400 hover:text-white transition-colors">Processus</a></li>
-                <li><a href="#testimonials" className="text-gray-400 hover:text-white transition-colors">Témoignages</a></li>
+              <h4 className="font-semibold mb-4">Navigation</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link to="/" className="hover:text-white transition-colors">Accueil</Link></li>
+                <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
+                <li><Link to="/rendez-vous" className="hover:text-white transition-colors">Rendez-vous</Link></li>
+                <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4 text-white">Solutions</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Gestion de Rendez-vous</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Relation Client</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Analyses Prédictives</a></li>
+              <h4 className="font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#" className="hover:text-white transition-colors">Conseil Stratégique</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Sécurité & Conformité</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Gestion de Projet</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Support Dédié</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4 text-white">Contact</h4>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-4 w-4 text-[#547db4]" />
-                  <span className="text-gray-400">contact@iassist.fr</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-4 w-4 text-[#547db4]" />
-                  <span className="text-gray-400">+33 1 23 45 67 89</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Clock className="h-4 w-4 text-[#547db4]" />
-                  <span className="text-gray-400">Lun-Ven: 9h-18h</span>
-                </div>
-              </div>
+              <h4 className="font-semibold mb-4">Contact</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>Email: contact@proservices.fr</li>
+                <li>Tél: +33 1 23 45 67 89</li>
+                <li>Lun-Ven: 9h-18h</li>
+              </ul>
             </div>
           </div>
           
-          <div className="border-t border-gray-800 pt-8 text-center">
-            <p className="text-gray-400">
-              © 2024 IAssist. Tous droits réservés. | 
-              <a href="#" className="hover:text-white transition-colors ml-1">Mentions Légales</a> | 
-              <a href="#" className="hover:text-white transition-colors ml-1">Politique de Confidentialité</a>
-            </p>
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 IAssist. Tous droits réservés. | <a href="#" className="hover:text-white transition-colors">Mentions Légales</a> | <a href="#" className="hover:text-white transition-colors">Politique de Confidentialité</a></p>
           </div>
         </div>
       </footer>
     </div>
   );
-};
-
-export default Index;
+}
