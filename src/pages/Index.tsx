@@ -4,6 +4,10 @@ import { BarChart3, Shield, Clock, Users, Star, ArrowRight, CheckCircle } from "
 import { Link } from "react-router-dom";
 
 export default function Index() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation Header */}
@@ -15,21 +19,21 @@ export default function Index() {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="text-foreground hover:text-primary transition-colors font-medium">
+              <button 
+                onClick={scrollToTop}
+                className="text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
+              >
                 Accueil
-              </Link>
+              </button>
               <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">
                 Services
               </a>
               <a href="#process" className="text-foreground hover:text-primary transition-colors font-medium">
                 Processus
               </a>
-              <Link to="/rendez-vous" className="text-foreground hover:text-primary transition-colors font-medium">
-                Rendez-vous
-              </Link>
-              <Link to="/contact" className="text-foreground hover:text-primary transition-colors font-medium">
-                Contact
-              </Link>
+              <Button asChild variant="outline" className="bg-primary text-white hover:bg-primary-dark border-primary">
+                <Link to="/contact">Contact</Link>
+              </Button>
             </div>
 
             {/* Mobile menu button */}
@@ -59,9 +63,6 @@ export default function Index() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button size="lg" variant="secondary" asChild className="hover-lift">
                   <a href="#services">Découvrir nos Services</a>
-                </Button>
-                <Button size="lg" asChild className="hover-lift">
-                  <Link to="/rendez-vous">Prendre Rendez-vous</Link>
                 </Button>
               </div>
             </div>
@@ -241,9 +242,8 @@ export default function Index() {
             <div>
               <h4 className="font-semibold mb-4">Navigation</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link to="/" className="hover:text-white transition-colors">Accueil</Link></li>
+                <li><button onClick={scrollToTop} className="hover:text-white transition-colors cursor-pointer">Accueil</button></li>
                 <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
-                <li><Link to="/rendez-vous" className="hover:text-white transition-colors">Rendez-vous</Link></li>
                 <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
