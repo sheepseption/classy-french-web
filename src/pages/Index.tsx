@@ -1,8 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { BarChart3, Shield, Clock, Users, Star, ArrowRight, CheckCircle } from "lucide-react";
+import { BarChart3, Shield, Clock, Users, Star, ArrowRight, CheckCircle, Sparkles, Zap, Target } from "lucide-react";
 import { Link } from "react-router-dom";
-import  logo  from "../assets/logo.png";
 
 export default function Index() {
   const scrollToTop = () => {
@@ -12,28 +11,27 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-border">
+      <header className="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-xl border-b border-gray-200/50">
         <nav className="content-container">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-             {/* on remplace le titre par le logo, on ajuste la hauteur via Tailwind */}
-              <img src={logo} alt="IAssist Logo" className="h-16 w-auto" />
+              <h2 className="text-2xl font-display font-bold text-primary">IAssist</h2>
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
               <button 
                 onClick={scrollToTop}
-                className="text-foreground hover:text-primary transition-colors font-medium cursor-pointer"
+                className="text-foreground hover:text-primary transition-all duration-300 font-medium cursor-pointer hover:scale-105"
               >
                 Accueil
               </button>
-              <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a href="#services" className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-105">
                 Services
               </a>
-              <a href="#process" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a href="#process" className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-105">
                 Processus
               </a>
-              <Button asChild variant="outline" className="bg-primary text-white hover:bg-primary-dark border-primary">
+              <Button asChild variant="default" className="bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-primary text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <Link to="/contact">Contact</Link>
               </Button>
             </div>
@@ -51,36 +49,112 @@ export default function Index() {
       </header>
 
       <main>
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-primary elegant-gradient py-24 md:py-32">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="relative content-container text-center text-white">
-            <div className="animate-fade-in">
-              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
-                Une Intelligence Artificielle à Votre Service
-              </h1>
-              <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
-                Nous offrons des solutions sur mesure pour répondre à tous vos besoins professionnels avec efficacité et intégrité.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button size="lg" variant="secondary" asChild className="hover-lift">
-                  <a href="#services">Découvrir nos Services</a>
-                </Button>
-                <Button size="lg" asChild className="hover-lift">
-                  <Link to="/rendez-vous">Prendre Rendez-vous</Link>
-                </Button>
+        {/* Hero Section with Visual Enhancement */}
+        <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+          {/* Animated Background */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-indigo-900/80 to-purple-900/90"></div>
+            
+            {/* Floating Elements */}
+            <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+          </div>
+
+          <div className="relative content-container flex items-center min-h-screen pt-20">
+            <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+              {/* Left Content */}
+              <div className="text-white space-y-8 animate-fade-in">
+                <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                  <Sparkles className="w-4 h-4 mr-2 text-yellow-400" />
+                  <span className="text-sm font-medium">Intelligence Artificielle de Nouvelle Génération</span>
+                </div>
+                
+                <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight">
+                  Transformez Votre
+                  <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Entreprise
+                  </span>
+                  avec l'IA
+                </h1>
+                
+                <p className="text-xl text-blue-100 leading-relaxed max-w-xl">
+                  Découvrez des solutions d'intelligence artificielle sur mesure qui révolutionnent votre façon de travailler et multiplient votre efficacité.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 text-white shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 hover:scale-105 group">
+                    <a href="#services" className="flex items-center">
+                      Découvrir nos Services
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </Button>
+                  <Button size="lg" variant="outline" asChild className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105">
+                    <Link to="/rendez-vous">Prendre Rendez-vous</Link>
+                  </Button>
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white">500+</div>
+                    <div className="text-sm text-blue-200">Clients Satisfaits</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white">98%</div>
+                    <div className="text-sm text-blue-200">Taux de Réussite</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white">24/7</div>
+                    <div className="text-sm text-blue-200">Support Dédié</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Visual */}
+              <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                <div className="relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                    alt="Intelligence Artificielle"
+                    className="rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent rounded-2xl"></div>
+                  
+                  {/* Floating Cards */}
+                  <div className="absolute -top-6 -right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-2xl animate-float">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-sm font-medium text-gray-800">IA Active</span>
+                    </div>
+                  </div>
+                  
+                  <div className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-2xl animate-float" style={{ animationDelay: '1s' }}>
+                    <div className="flex items-center gap-3">
+                      <Zap className="w-5 h-5 text-yellow-500" />
+                      <span className="text-sm font-medium text-gray-800">Performance +40%</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Services Section */}
-        <section id="services" className="section-padding bg-gray-50">
+        {/* Services Section Enhanced */}
+        <section id="services" className="py-24 bg-gradient-to-b from-gray-50 to-white">
           <div className="content-container">
-            <div className="text-center mb-16 animate-fade-in">
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Nos Services</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Des solutions complètes adaptées à vos besoins spécifiques
+            <div className="text-center mb-20 animate-fade-in">
+              <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full mb-6">
+                <Target className="w-4 h-4 mr-2 text-primary" />
+                <span className="text-sm font-medium text-primary">Nos Solutions IA</span>
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+                Des Services qui Transforment
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Découvrez comment notre intelligence artificielle révolutionne chaque aspect de votre activité
               </p>
             </div>
             
@@ -88,153 +162,260 @@ export default function Index() {
               {[
                 {
                   icon: <BarChart3 className="w-8 h-8" />,
-                  title: "Conseil Stratégique",
-                  description: "Analyse approfondie et recommandations personnalisées pour optimiser votre performance."
+                  title: "Conseil Stratégique IA",
+                  description: "Analyse prédictive et recommandations personnalisées powered by AI pour optimiser votre performance.",
+                  image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                  color: "from-blue-500 to-cyan-500"
                 },
                 {
                   icon: <Shield className="w-8 h-8" />,
-                  title: "Sécurité & Conformité",
-                  description: "Protection de vos données et mise en conformité avec les réglementations en vigueur."
+                  title: "Sécurité Intelligente",
+                  description: "Protection avancée avec détection automatique des menaces et conformité intelligente.",
+                  image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                  color: "from-green-500 to-emerald-500"
                 },
                 {
                   icon: <Clock className="w-8 h-8" />,
-                  title: "Gestion de Projet",
-                  description: "Suivi rigoureux et livraison dans les délais de tous vos projets critiques."
+                  title: "Automation Intelligente",
+                  description: "Automatisation des processus avec IA pour une gestion de projet optimisée et prédictive.",
+                  image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                  color: "from-purple-500 to-pink-500"
                 },
                 {
                   icon: <Users className="w-8 h-8" />,
-                  title: "Support Dédié",
-                  description: "Une équipe d'experts disponible pour répondre à toutes vos questions."
+                  title: "Support IA 24/7",
+                  description: "Assistant virtuel intelligent disponible en permanence pour répondre à vos besoins.",
+                  image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                  color: "from-orange-500 to-red-500"
                 }
               ].map((service, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border hover-lift transition-all duration-300 animate-slide-in-left" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="text-primary mb-4">{service.icon}</div>
-                  <h3 className="font-display text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                <div key={index} className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden hover:-translate-y-2 animate-slide-in-left" style={{ animationDelay: `${index * 150}ms` }}>
+                  <div className="aspect-video relative overflow-hidden">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-80`}></div>
+                    <div className="absolute top-4 left-4 text-white">
+                      {service.icon}
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-display text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Process Section */}
-        <section id="process" className="section-padding">
-          <div className="content-container">
-            <div className="text-center mb-16 animate-fade-in">
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Notre Processus</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Une approche structurée pour garantir votre succès
+        {/* Process Section with Visual Timeline */}
+        <section id="process" className="py-24 bg-gradient-to-r from-slate-900 to-gray-900 text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-10"></div>
+          <div className="relative content-container">
+            <div className="text-center mb-20 animate-fade-in">
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+                Notre Méthodologie
+                <span className="block text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+                  Éprouvée
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Un processus structuré et transparent pour garantir votre succès
               </p>
             </div>
             
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                {
-                  number: "1",
-                  title: "Consultation Initiale",
-                  description: "Nous analysons vos besoins et définissons ensemble vos objectifs."
-                },
-                {
-                  number: "2",
-                  title: "Planification",
-                  description: "Élaboration d'une stratégie sur mesure avec des jalons clairs."
-                },
-                {
-                  number: "3",
-                  title: "Mise en Œuvre",
-                  description: "Exécution professionnelle avec suivi régulier de l'avancement."
-                },
-                {
-                  number: "4",
-                  title: "Résultats",
-                  description: "Livraison de solutions efficaces et mesure de la performance."
-                }
-              ].map((step, index) => (
-                <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${index * 150}ms` }}>
-                  <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4 mx-auto">
-                    {step.number}
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 hidden lg:block"></div>
+              
+              <div className="space-y-12 lg:space-y-24">
+                {[
+                  {
+                    number: "1",
+                    title: "Consultation & Analyse IA",
+                    description: "Audit intelligent de vos besoins avec notre IA propriétaire pour identifier les opportunités d'optimisation.",
+                    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    position: "left"
+                  },
+                  {
+                    number: "2",
+                    title: "Stratégie Personnalisée",
+                    description: "Conception d'une roadmap sur mesure avec solutions IA adaptées à votre secteur et vos objectifs.",
+                    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    position: "right"
+                  },
+                  {
+                    number: "3",
+                    title: "Implémentation Intelligente",
+                    description: "Déploiement progressif avec monitoring en temps réel et ajustements automatiques.",
+                    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    position: "left"
+                  },
+                  {
+                    number: "4",
+                    title: "Optimisation Continue",
+                    description: "Amélioration permanente grâce à l'apprentissage automatique et l'analyse prédictive.",
+                    image: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    position: "right"
+                  }
+                ].map((step, index) => (
+                  <div key={index} className={`flex items-center gap-8 lg:gap-16 ${step.position === 'right' ? 'lg:flex-row-reverse' : ''} animate-fade-in`} style={{ animationDelay: `${index * 200}ms` }}>
+                    <div className="flex-1 max-w-lg">
+                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                            {step.number}
+                          </div>
+                          <h3 className="font-display text-2xl font-semibold">{step.title}</h3>
+                        </div>
+                        <p className="text-gray-300 leading-relaxed text-lg">{step.description}</p>
+                      </div>
+                    </div>
+                    <div className="flex-1 max-w-lg">
+                      <img 
+                        src={step.image} 
+                        alt={step.title}
+                        className="rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500 w-full h-64 object-cover"
+                      />
+                    </div>
                   </div>
-                  <h3 className="font-display text-xl font-semibold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{step.description}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Trust Section */}
-        <section className="section-padding bg-gray-50">
+        {/* Enhanced Trust Section */}
+        <section className="py-24 bg-gradient-to-b from-white to-gray-50">
           <div className="content-container">
-            <div className="text-center mb-16 animate-fade-in">
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Ils Nous Font Confiance</h2>
+            <div className="text-center mb-20 animate-fade-in">
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+                Ils Transforment leur Business avec Nous
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Découvrez comment nos clients révolutionnent leur activité
+              </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
               {[
                 {
-                  text: "Un service exceptionnel qui a dépassé toutes nos attentes. L'équipe est professionnelle, réactive et très compétente.",
+                  text: "Grâce à l'IA d'IAssist, nous avons automatisé 80% de nos processus et multiplié notre productivité par 3. Une révolution !",
                   author: "Marie Dubois",
-                  role: "Directrice Générale, TechCorp"
+                  role: "CEO, TechCorp",
+                  avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b3ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+                  rating: 5,
+                  highlight: "+300% productivité"
                 },
                 {
-                  text: "Leur expertise nous a permis d'optimiser nos processus et d'augmenter notre efficacité de 40%.",
+                  text: "L'intelligence artificielle personnalisée a transformé notre prise de décision. Nous anticipons maintenant les tendances du marché.",
                   author: "Jean Martin",
-                  role: "PDG, InnovateSolutions"
+                  role: "Directeur Innovation, InnovateSolutions",
+                  avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+                  rating: 5,
+                  highlight: "Prédictions à 95%"
                 },
                 {
-                  text: "Un partenaire de confiance sur qui nous pouvons compter pour tous nos projets stratégiques.",
+                  text: "Un partenaire technologique exceptionnel. Leur IA sur mesure nous donne un avantage concurrentiel décisif.",
                   author: "Sophie Bernard",
-                  role: "Responsable IT, GlobalFinance"
+                  role: "CTO, GlobalFinance",
+                  avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+                  rating: 5,
+                  highlight: "ROI +250%"
                 }
               ].map((testimonial, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border hover-lift animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="flex text-yellow-400 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4 leading-relaxed">"{testimonial.text}"</p>
-                  <div>
-                    <div className="font-semibold">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                <div key={index} className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border hover:border-primary/20 relative overflow-hidden animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
+                  
+                  <div className="relative">
+                    <div className="flex text-yellow-400 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-current" />
+                      ))}
+                    </div>
+                    
+                    <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+                      {testimonial.highlight}
+                    </div>
+                    
+                    <p className="text-gray-700 italic mb-6 leading-relaxed text-lg">"{testimonial.text}"</p>
+                    
+                    <div className="flex items-center gap-4">
+                      <img 
+                        src={testimonial.avatar} 
+                        alt={testimonial.author}
+                        className="w-12 h-12 rounded-full object-cover"
+                      />
+                      <div>
+                        <div className="font-semibold text-gray-900">{testimonial.author}</div>
+                        <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="flex justify-center items-center gap-8 opacity-60">
-              {["Enterprise+", "TechLeader", "InnovateCo", "GlobalTrust"].map((company, index) => (
-                <div key={index} className="text-lg font-semibold text-muted-foreground">
-                  {company}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
+              {["TechCorp", "InnovateSolutions", "GlobalFinance", "FutureAI"].map((company, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-2xl font-bold text-muted-foreground mb-2">{company}</div>
+                  <div className="text-sm text-muted-foreground">Partenaire depuis 2023</div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="section-padding bg-primary text-white">
-          <div className="content-container text-center">
+        {/* Enhanced CTA Section */}
+        <section className="py-24 bg-gradient-to-r from-blue-900 via-purple-900 to-indigo-900 text-white relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          </div>
+          
+          <div className="relative content-container text-center">
             <div className="animate-fade-in">
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-                Prêt à Transformer Votre Entreprise ?
+              <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
+                <Sparkles className="w-5 h-5 mr-2 text-yellow-400" />
+                <span className="font-medium">Rejoignez la Révolution IA</span>
+              </div>
+              
+              <h2 className="font-display text-4xl md:text-6xl font-bold mb-6">
+                Prêt à Multiplier
+                <span className="block bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                  Votre Performance ?
+                </span>
               </h2>
-              <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-                Contactez-nous dès aujourd'hui pour une consultation gratuite
+              
+              <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
+                Découvrez comment notre IA sur mesure peut transformer votre entreprise dès aujourd'hui. 
+                Consultation gratuite et sans engagement.
               </p>
-              <Button size="lg" variant="secondary" asChild className="hover-lift">
-                <Link to="/rendez-vous">
-                  Planifier une Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <Button size="lg" className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-orange-500 hover:to-yellow-500 text-black font-semibold shadow-2xl hover:shadow-yellow-500/25 transition-all duration-300 hover:scale-105 group px-8 py-4 text-lg">
+                  <Link to="/rendez-vous" className="flex items-center">
+                    Démarrer Maintenant
+                    <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+                
+                <div className="text-center sm:text-left">
+                  <div className="text-sm text-gray-300 mb-1">🚀 Résultats garantis sous 30 jours</div>
+                  <div className="text-sm text-gray-300">💡 Consultation gratuite offerte</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-16">
+      {/* Enhanced Footer */}
+      <footer className="bg-black text-white py-20">
         <div className="content-container">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
