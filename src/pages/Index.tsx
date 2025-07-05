@@ -1,7 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { BarChart3, Shield, Clock, Users, Star, ArrowRight, CheckCircle, Sparkles, Zap, Target, BookOpen, MessageCircle, UserCheck, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import Header from "@/components/Header";
 
 export default function Index() {
   const scrollToTop = () => {
@@ -11,42 +11,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation Header */}
-      <header className="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-xl border-b border-gray-200/50">
-        <nav className="content-container">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center">
-              <h2 className="text-2xl font-display font-bold text-primary">IAssist</h2>
-            </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <button 
-                onClick={scrollToTop}
-                className="text-foreground hover:text-primary transition-all duration-300 font-medium cursor-pointer hover:scale-105"
-              >
-                Accueil
-              </button>
-              <a href="#services" className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-105">
-                Services
-              </a>
-              <a href="#process" className="text-foreground hover:text-primary transition-all duration-300 font-medium hover:scale-105">
-                Processus
-              </a>
-              <Button asChild variant="default" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-red-500 hover:to-orange-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <Link to="/contact">Contact</Link>
-              </Button>
-            </div>
-
-            {/* Mobile menu button */}
-            <button className="md:hidden p-2">
-              <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <span className="w-4 h-0.5 bg-foreground mb-1"></span>
-                <span className="w-4 h-0.5 bg-foreground mb-1"></span>
-                <span className="w-4 h-0.5 bg-foreground"></span>
-              </div>
-            </button>
-          </div>
-        </nav>
-      </header>
+      <Header />
 
       <main>
         {/* Hero Section with Visual Enhancement */}
@@ -91,7 +56,7 @@ export default function Index() {
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" asChild className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105">
-                    <Link to="/rendez-vous">Prendre Rendez-vous</Link>
+                    <Link to="/contact">Prendre Rendez-vous</Link>
                   </Button>
                 </div>
 
@@ -399,7 +364,7 @@ export default function Index() {
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button size="lg" className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-orange-500 hover:to-yellow-500 text-black font-semibold shadow-2xl hover:shadow-yellow-500/25 transition-all duration-300 hover:scale-105 group px-8 py-4 text-lg">
-                  <Link to="/rendez-vous" className="flex items-center">
+                  <Link to="/contact" className="flex items-center">
                     Démarrer Maintenant
                     <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </Link>

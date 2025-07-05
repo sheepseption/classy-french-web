@@ -89,7 +89,7 @@ export default function Contact() {
       {/* Contact Section */}
       <section className="section-padding">
         <div className="content-container">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Column - Contact Form */}
             <div className="space-y-8">
               <div>
@@ -98,7 +98,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-slate-200/50">
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-slate-200/50 h-fit">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
@@ -195,7 +195,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl shadow-lg border border-slate-200/50 overflow-hidden">
+              <div className="bg-white rounded-xl shadow-lg border border-slate-200/50 overflow-hidden h-fit">
                 {/* Calendly Embed */}
                 <div className="h-[600px] w-full">
                   <iframe

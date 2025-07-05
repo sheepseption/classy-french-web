@@ -14,9 +14,9 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">PS</span>
+              <span className="text-white font-bold text-sm">IA</span>
             </div>
-            <span className="font-display font-bold text-xl text-slate-900">ProServices</span>
+            <span className="font-display font-bold text-xl text-slate-900">IAssist</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -24,11 +24,8 @@ export default function Header() {
             <Link to="/" className="text-slate-700 hover:text-blue-600 font-medium transition-colors">
               Accueil
             </Link>
-            <Link to="/contact" className="text-slate-700 hover:text-blue-600 font-medium transition-colors">
-              Contact
-            </Link>
             <Button asChild className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800">
-              <Link to="/contact">Nous contacter</Link>
+              <Link to="/contact">Contact</Link>
             </Button>
           </nav>
 
@@ -52,15 +49,8 @@ export default function Header() {
               >
                 Accueil
               </Link>
-              <Link 
-                to="/contact" 
-                className="text-slate-700 hover:text-blue-600 font-medium transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
               <Button asChild className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 w-fit">
-                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Nous contacter</Link>
+                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
               </Button>
             </nav>
           </div>
