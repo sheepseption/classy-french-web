@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -38,7 +39,7 @@ export default function Contact() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50 flex flex-col">
         <Header />
         
         {/* Page Header */}
@@ -53,7 +54,7 @@ export default function Contact() {
         </section>
 
         {/* Success Message */}
-        <section className="section-padding">
+        <section className="section-padding flex-1">
           <div className="content-container max-w-2xl text-center">
             <div className="bg-white p-8 rounded-xl shadow-lg border border-slate-200/50">
               <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
@@ -67,12 +68,14 @@ export default function Contact() {
             </div>
           </div>
         </section>
+
+        <Footer />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50 flex flex-col">
       <Header />
       
       {/* Page Header */}
@@ -87,19 +90,19 @@ export default function Contact() {
       </section>
 
       {/* Contact Section */}
-      <section className="section-padding">
+      <section className="section-padding flex-1">
         <div className="content-container">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
             {/* Left Column - Contact Form */}
-            <div className="space-y-8">
+            <div className="space-y-8 flex flex-col">
               <div>
                 <p className="text-muted-foreground mb-8 text-lg">
                   Vous avez une question ? Besoin d'un conseil rapide ? Écrivez-nous directement ici :
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-slate-200/50 h-fit">
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-slate-200/50 flex-1">
+                <form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="lastName" className="text-sm font-medium text-slate-700">Nom *</label>
@@ -157,7 +160,7 @@ export default function Contact() {
                     />
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-2 flex-1">
                     <label htmlFor="message" className="text-sm font-medium text-slate-700">Message libre *</label>
                     <Textarea
                       id="message"
@@ -167,27 +170,29 @@ export default function Contact() {
                       placeholder="Décrivez votre demande ou vos questions..."
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="border-slate-300 focus:border-blue-500 focus:ring-blue-500"
+                      className="border-slate-300 focus:border-blue-500 focus:ring-blue-500 flex-1"
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    Envoyer le message
-                  </Button>
+                  <div className="mt-auto space-y-4">
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      Envoyer le message
+                    </Button>
 
-                  <p className="text-sm text-muted-foreground text-center">
-                    * Champs obligatoires
-                  </p>
+                    <p className="text-sm text-muted-foreground text-center">
+                      * Champs obligatoires
+                    </p>
+                  </div>
                 </form>
               </div>
             </div>
 
             {/* Right Column - Calendly Integration */}
-            <div className="space-y-8">
+            <div className="space-y-8 flex flex-col">
               <div className="text-center lg:text-left">
                 <h2 className="font-display text-3xl font-semibold mb-4">Planifiez un appel en un clic</h2>
                 <p className="text-muted-foreground text-lg">
@@ -195,9 +200,9 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl shadow-lg border border-slate-200/50 overflow-hidden h-fit">
+              <div className="bg-white rounded-xl shadow-lg border border-slate-200/50 overflow-hidden flex-1 flex flex-col">
                 {/* Calendly Embed */}
-                <div className="h-[600px] w-full">
+                <div className="flex-1 min-h-[600px]">
                   <iframe
                     src="https://calendly.com/votre-lien-calendly"
                     width="100%"
@@ -260,6 +265,8 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
