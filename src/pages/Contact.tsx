@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import Header from '@/components/Header';
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -38,6 +39,8 @@ export default function Contact() {
   if (isSubmitted) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50">
+        <Header />
+        
         {/* Page Header */}
         <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-black/10"></div>
@@ -70,6 +73,8 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50">
+      <Header />
+      
       {/* Page Header */}
       <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
