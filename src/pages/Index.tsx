@@ -64,8 +64,8 @@ export default function Index() {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">500+</div>
-                    <div className="text-sm text-blue-200">Clients Accompagnés</div>
+                    <div className="text-3xl font-bold text-white">100%</div>
+                    <div className="text-sm text-blue-200">Savoir Transmis</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-white">98%</div>
@@ -130,7 +130,7 @@ export default function Index() {
                   icon: <BookOpen className="w-8 h-8" />,
                   title: "Préservation du Savoir",
                   description: "Extraction et structuration des connaissances critiques de l'entreprise à partir de données brutes (emails, fichiers, historique client…).",
-                  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                  image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                   color: "from-blue-500 to-cyan-500"
                 },
                 {
@@ -151,7 +151,7 @@ export default function Index() {
                   icon: <ArrowUpRight className="w-8 h-8" />,
                   title: "Transmission interne fluide",
                   description: "Facilitez l'onboarding, le support client et la continuité d'activité grâce à une IA toujours disponible.",
-                  image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                  image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                   color: "from-orange-500 to-red-500"
                 }
               ].map((service, index) => (
@@ -203,28 +203,28 @@ export default function Index() {
                     number: "1",
                     title: "Diagnostic des zones de dépendance",
                     description: "Identification des expertises critiques et des personnes clés dont dépend votre organisation.",
-                    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                     position: "left"
                   },
                   {
                     number: "2",
                     title: "Plan de centralisation du savoir",
                     description: "Conception d'une stratégie sur mesure pour extraire, structurer et centraliser les connaissances critiques.",
-                    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                     position: "right"
                   },
                   {
                     number: "3",
                     title: "Déploiement de l'IA conversationnelle",
                     description: "Mise en place d'un assistant IA formé sur vos données spécifiques, capable de répondre comme un expert.",
-                    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                     position: "left"
                   },
                   {
                     number: "4",
                     title: "Amélioration de la pertinence des réponses de l'IA dans le temps",
                     description: "Optimisation continue basée sur les retours d'usage pour une précision toujours accrue.",
-                    image: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                     position: "right"
                   }
                 ].map((step, index) => (
@@ -388,7 +388,7 @@ export default function Index() {
             <div>
               <h3 className="font-display text-xl font-semibold mb-4">IAssist</h3>
               <p className="text-gray-400 leading-relaxed mb-4">
-                Préservation du savoir d'entreprise depuis 2010. Votre continuité est notre priorité.
+                Préservation du savoir d'entreprise depuis 2023. Votre continuité est notre priorité.
               </p>
               <p className="text-yellow-400 font-medium">
                 Vous dépendez d'une personne clé ? Discutons-en.
@@ -425,7 +425,7 @@ export default function Index() {
           </div>
           
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 IAssist. Tous droits réservés. | <Link to="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link> | <Link to="/politique-confidentialite" className="hover:text-white transition-colors">Politique de Confidentialité</Link></p>
+            <p>&copy; 2023 IAssist. Tous droits réservés. | <Link to="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link> | <Link to="/politique-confidentialite" className="hover:text-white transition-colors">Politique de Confidentialité</Link></p>
           </div>
         </div>
       </footer>
