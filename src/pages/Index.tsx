@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { BarChart3, Shield, Clock, Users, Star, ArrowRight, CheckCircle, Sparkles, Zap, Target, BookOpen, MessageCircle, UserCheck, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -55,7 +56,7 @@ export default function Index() {
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </Button>
-                  <Button size="lg" variant="outline" asChild className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105">
+                  <Button size="lg" asChild className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-emerald-600 hover:to-green-500 text-white border-0 shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105">
                     <Link to="/contact">Prendre Rendez-vous</Link>
                   </Button>
                 </div>
@@ -364,7 +365,7 @@ export default function Index() {
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button size="lg" className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-orange-500 hover:to-yellow-500 text-black font-semibold shadow-2xl hover:shadow-yellow-500/25 transition-all duration-300 hover:scale-105 group px-8 py-4 text-lg">
-                  <Link to="/contact" className="flex items-center">
+                  <Link to="/contact" className="flex items-center" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     Démarrer Maintenant
                     <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -424,7 +425,7 @@ export default function Index() {
           </div>
           
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 IAssist. Tous droits réservés. | <a href="#" className="hover:text-white transition-colors">Mentions Légales</a> | <a href="#" className="hover:text-white transition-colors">Politique de Confidentialité</a></p>
+            <p>&copy; 2024 IAssist. Tous droits réservés. | <Link to="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link> | <Link to="/politique-confidentialite" className="hover:text-white transition-colors">Politique de Confidentialité</Link></p>
           </div>
         </div>
       </footer>

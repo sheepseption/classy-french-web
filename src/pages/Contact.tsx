@@ -283,9 +283,9 @@ export default function Contact() {
             <div>
               <h4 className="font-semibold mb-4">Navigation</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><button onClick={scrollToTop} className="hover:text-white transition-colors cursor-pointer">Accueil</button></li>
+                <li><Link to="/" className="hover:text-white transition-colors">Accueil</Link></li>
                 <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+                <li><button onClick={scrollToTop} className="hover:text-white transition-colors cursor-pointer">Contact</button></li>
               </ul>
             </div>
             
@@ -310,7 +310,7 @@ export default function Contact() {
           </div>
           
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 IAssist. Tous droits réservés. | <a href="#" className="hover:text-white transition-colors">Mentions Légales</a> | <a href="#" className="hover:text-white transition-colors">Politique de Confidentialité</a></p>
+            <p>&copy; 2024 IAssist. Tous droits réservés. | <Link to="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link> | <Link to="/politique-confidentialite" className="hover:text-white transition-colors">Politique de Confidentialité</Link></p>
           </div>
         </div>
       </footer>
