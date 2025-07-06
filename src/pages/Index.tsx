@@ -16,7 +16,7 @@ export default function Index() {
 
       <main>
         {/* Hero Section with Visual Enhancement */}
-        <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+        <section className="relative h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
           {/* Animated Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
@@ -28,7 +28,7 @@ export default function Index() {
             <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
           </div>
 
-          <div className="relative content-container flex items-center min-h-screen pt-20">
+          <div className="relative content-container flex items-center justify-center h-full">
             <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
               {/* Left Content */}
               <div className="text-white space-y-8 animate-fade-in">
@@ -56,7 +56,7 @@ export default function Index() {
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </Button>
-                  <Button size="lg" asChild className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-emerald-600 hover:to-green-500 text-white border-0 shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105">
+                  <Button size="lg" asChild className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-orange-500 hover:to-yellow-500 text-black font-semibold border-0 shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 hover:scale-105">
                     <Link to="/contact">Prendre Rendez-vous</Link>
                   </Button>
                 </div>
